@@ -13,3 +13,11 @@ const connection = mysql.createConnection({
 
 //connect sql server and sql db
 
+connection.connect(function(err){
+
+    // error if there is an issue when connecting 
+    if (err) throw err;
+
+   
+
+});
