@@ -1,0 +1,9 @@
+{
+    "name": "employee-tracker",
+    "version": "",
+    "description": "",
+    "main": "server.js",
+    "dependencies": {
+      "inquirer": "9.2.10",
+      "mysql": ""
+    },
