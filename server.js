@@ -2,6 +2,7 @@
 const mysql = require('mysql2');
 const inquirer = require('inquirer');
 const cfonts = require('cfonts');
+require("console.table")
 
 // creates connection to sql database
 const connection = mysql.createConnection({
@@ -16,7 +17,8 @@ const connection = mysql.createConnection({
 connection.connect(function(err){
 
     // error if there is an issue when connecting 
-    err? console.log(err) : console.log("connected")
+    err? console.log(err) : console.log("connected"), 
+    displayLogo()
 
    
 
@@ -38,14 +40,14 @@ function displayLogo(){
 
 }
 function startTracker (){
-    displayLogo()
+    
     inquirer.prompt([
         {
             type: "list",
-            name: "StartingOptions",
+            name: "startingOptions",
             message: "What would you like to do?",
-            choices: ["view_all_departments",
-            "view_all_roles",
+            choices: ["viewalldepartments",
+            "viewAllRoles",
             "view_all_employees",
             "add_a_department",
             "add_a_role",
@@ -56,9 +58,10 @@ function startTracker (){
         }
     ])
     .then ((userAnswers)=>{
+        console.log("selected:"  +userAnswers.startingOptions)
         let choices = userAnswers.startingOptions
         switch(choices){
-            case "view_all_departments": 
+            case "viewalldepartments": 
             viewAllDepartments();
             break;
             case "view_all_roles": 
@@ -87,5 +90,10 @@ function startTracker (){
         }
     })
 
+}
+function viewAllDepartments(){
+    connection.query("SELECT * FROM department", function(err,res){
+        err ? console.log(err): console.table(res), startTracker()
+    })
 }
 startTracker()
