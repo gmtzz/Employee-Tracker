@@ -95,5 +95,7 @@ function viewAllDepartments(){
     connection.query("SELECT * FROM department", function(err,res){
         err ? console.log(err): console.table(res), startTracker()
     })
+
+
 }
 startTracker()

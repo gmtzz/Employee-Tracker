@@ -1,23 +1,51 @@
 # Employee-Tracker
-GIVEN a command-line application that accepts user input
-WHEN I start the application
-THEN I am presented with the following options: 
-view all departments, 
-view all roles, view all employees, 
-add a department, add a role, add an employee, 
-update an employee role
-WHEN I choose to view all departments
-THEN I am presented with a formatted table showing department names and department ids
-WHEN I choose to view all roles
-THEN I am presented with the job title, role id, the department that role belongs to, and the salary for that role
-WHEN I choose to view all employees
-THEN I am presented with a formatted table showing employee data, including employee ids, first names, last names, job titles, departments, salaries, and managers that the employees report to
-WHEN I choose to add a department
-THEN I am prompted to enter the name of the department and that department is added to the database
-WHEN I choose to add a role
-THEN I am prompted to enter the name, salary, and department for the role and that role is added to the database
-WHEN I choose to add an employee
-THEN I am prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
-WHEN I choose to update an employee role
-THEN I am prompted to select an employee to update and their new role and this information is updated in the database
-Mock-Up
+## Table of Contents
+* [Description](#Description)
+* [Installation](#Installation)
+* [DEMO-Recording](#DEMO-Recording)
+* [Screenshots](#Screenshots)
+* [Technologies-Used](#Technologies-used)
+* [Usage-information](#Usage-information)
+* [Credits](#Credits)
+* [Features](#Features)
+* [License](#License)
+
+## Description 
+* The purpose of this app is to allow users to view and manage the departments, roles, and employees in the company.
+## Installation
+1. Clone the repo from https://github.com/gmtzz/Employee-Tracker  
+
+2. Install VS code and open repo with VS code.
+
+3. Install dependencies.
+
+4. Install Node.js using the terminal in VS code.
+
+5. To run the app, in your terminal run the command node index.js
+
+6. Install mySQL, run mySQL using command mySQL -u root -p
+
+7. Run the app using node.js, run node server.js
+
+
+## Screenshots
+
+## Technologies-Used
+* Node.js
+* Inquirer
+* mySQL
+
+## Usage-information
+* Use the command line to navigate to directory
+* Install all dependencies
+    * Install and run node js
+        * npm i
+        * node index.js
+* Once you installed the necessary, run the command node server.js 
+
+## Sources
+I used guidance from my tutor and past exercises from module 11. Past Homework ReadMe format
+## Features
+* This app allows you to manage employee information.
+## License
+* MIT License
