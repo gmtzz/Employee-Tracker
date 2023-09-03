@@ -64,7 +64,7 @@ function startTracker (){
             case "viewalldepartments": 
             viewAllDepartments();
             break;
-            case "view_all_roles": 
+            case "viewallroles": 
             viewAllRoles();
             break;
             case "view_all_employees": 
@@ -91,11 +91,17 @@ function startTracker (){
     })
 
 }
-function viewAllDepartments(){
-    connection.query("SELECT * FROM department", function(err,res){
-        err ? console.log(err): console.table(res), startTracker()
-    })
 
+function viewAllDepartments() {
+    connection.query("SELECT * FROM department", function(err, res) {
+        err ? console.log(err) : console.table(res), startTracker();
+    });
+}
 
+function viewAllRoles() {
+    connection.query("SELECT * FROM role", function(err, res) {
+        err ? console.log(err) : console.table(res), startTracker();
+    });
 }
 startTracker()
+    
