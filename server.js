@@ -192,13 +192,6 @@ function addAnEmployee(){
                 name:"lastName",
                 message:"What is their last name?",
     
-            },
-            {
-                type: "list",
-                name: "roleId",
-                message: "What role does this person belong to?",
-                choices: roleList, 
-    
             },  
         ]).then((userResponse)=>{
             let roleId=userResponse.roleId;
