@@ -23,6 +23,7 @@ connection.connect(function(err){
    
 
 });
+//cfonts config
 const fontConfig={
     font: "3d",
     align: "center",
@@ -33,12 +34,13 @@ const fontConfig={
     fontSize: "small",
 
 }
-
+//function to display logo
 function displayLogo(){
     cfonts.say("Emplo\nyee\nTra\ncker",fontConfig)
     console.log("-------------------------------------------------------")
 
 }
+//start app
 function startTracker (){
     
     inquirer.prompt([
@@ -91,23 +93,26 @@ function startTracker (){
     })
 
 }
-
+//View all departments function
 function viewAllDepartments() {
     connection.query("SELECT * FROM department", function(err, res) {
         err ? console.log(err) : console.table(res), startTracker();
     });
 }
+//View all roles function
 function viewAllRoles() {
     connection.query("SELECT * FROM role", function(err, res) {
         err ? console.log(err) : console.table(res), startTracker();
     });
 
 }
+//view all employees function
 function viewAllEmployees() {
     connection.query("SELECT * FROM employee", function(err, res) {
         err ? console.log(err) : console.table(res), startTracker();
     });
 }
+// add a dept function
 function addADepartment(){
     inquirer.prompt([
         {
@@ -125,6 +130,7 @@ function addADepartment(){
         )
     })
 }
+//add a role function
 function addARole(){
     connection.query("SELECT * FROM department", function (error, response){
        if (error){
@@ -169,6 +175,7 @@ function addARole(){
        })
     })
 }
+//add an employee function
 function addAnEmployee(){
     connection.query("SELECT * FROM department", function (error, response){
         if (error){
@@ -209,6 +216,7 @@ function addAnEmployee(){
 
        
         
+    
 
 }
 startTracker()
