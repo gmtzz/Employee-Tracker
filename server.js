@@ -219,12 +219,16 @@ function addAnEmployee(){
                 message:"What is their last name?",
     
             },  
-            //roleid prompt?
+            
             {
+                type: "list",
+                name: "roleId",
+                message: "Select the employee's role:",
+                choices: roleList, 
+            },
 
-            }
         ]).then((userResponse)=>{
-            let roleId=userResponse.roleId;
+            let roleId=roleResponse.roleId;
             let employeeFirst=userResponse.firstName;
             let employeeLast =userResponse.lastName;
             connection.query(`INSERT INTO employee (first_name,last_name, role_id)
@@ -237,8 +241,7 @@ function addAnEmployee(){
         })
     })
 
-    // trying to assign roleId from userResponse, 
-    //but there is no prompt for roleId in inquirer prompts
+    
 
        
         
