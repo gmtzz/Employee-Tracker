@@ -131,13 +131,6 @@ function viewAllEmployees() {
 });   
 }
 
-
-// function viewAllEmployees() {
-//     connection.query("SELECT * FROM employee", function(err, res) {
-//         err ? console.log(err) : console.table(res), startTracker();
-//     });
-// }
-
 // add a dept function
 function addADepartment(){
     inquirer.prompt([
@@ -226,6 +219,10 @@ function addAnEmployee(){
                 message:"What is their last name?",
     
             },  
+            //roleid prompt?
+            {
+
+            }
         ]).then((userResponse)=>{
             let roleId=userResponse.roleId;
             let employeeFirst=userResponse.firstName;
@@ -239,6 +236,9 @@ function addAnEmployee(){
             )
         })
     })
+
+    // trying to assign roleId from userResponse, 
+    //but there is no prompt for roleId in inquirer prompts
 
        
         
