@@ -95,10 +95,7 @@ function startTracker (){
 }
 //View all departments function
 function viewAllDepartments() {
-    
-        //err ? console.log(err) : console.table(res), startTracker();
-        const query = 'SELECT * FROM department';
-
+    const query = 'SELECT * FROM department';
     connection.query(query, (err, results) => {
         if (err) {
         console.log('Error:', err);
@@ -110,17 +107,37 @@ function viewAllDepartments() {
 }
 //View all roles function
 function viewAllRoles() {
-    connection.query("SELECT * FROM role", function(err, res) {
-        err ? console.log(err) : console.table(res), startTracker();
-    });
-
+    const query = 'SELECT * FROM role';
+    connection.query(query, (err, results) => {
+        if (err) {
+        console.log('Error:', err);
+        } else {
+        console.log('All Roles:');
+        console.table(results), startTracker();
+    }
+});   
 }
+
 //view all employees function
 function viewAllEmployees() {
-    connection.query("SELECT * FROM employee", function(err, res) {
-        err ? console.log(err) : console.table(res), startTracker();
-    });
+    const query = 'SELECT * FROM employee';
+    connection.query(query, (err, results) => {
+        if (err) {
+        console.log('Error:', err);
+        } else {
+        console.log('All Employees:');
+        console.table(results), startTracker();
+    }
+});   
 }
+
+
+// function viewAllEmployees() {
+//     connection.query("SELECT * FROM employee", function(err, res) {
+//         err ? console.log(err) : console.table(res), startTracker();
+//     });
+// }
+
 // add a dept function
 function addADepartment(){
     inquirer.prompt([
