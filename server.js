@@ -104,9 +104,7 @@ function viewAllDepartments() {
         console.log('Error:', err);
         } else {
         console.log('All Departments:');
-        results.forEach((department) => {
-            console.log(`ID: ${department.id}, Name: ${department.department_name}`),startTracker();
-      });
+        console.table(results), startTracker();
     }
 });   
 }
