@@ -95,9 +95,20 @@ function startTracker (){
 }
 //View all departments function
 function viewAllDepartments() {
-    connection.query("SELECT * FROM department", function(err, res) {
-        err ? console.log(err) : console.table(res), startTracker();
-    });
+    
+        //err ? console.log(err) : console.table(res), startTracker();
+        const query = 'SELECT * FROM department';
+
+    connection.query(query, (err, results) => {
+        if (err) {
+        console.log('Error:', err);
+        } else {
+        console.log('All Departments:');
+        results.forEach((department) => {
+            console.log(`ID: ${department.id}, Name: ${department.department_name}`),startTracker();
+      });
+    }
+});   
 }
 //View all roles function
 function viewAllRoles() {

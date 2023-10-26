@@ -6,7 +6,7 @@
 * [Screenshots](#Screenshots)
 * [Technologies-Used](#Technologies-used)
 * [Usage-information](#Usage-information)
-* [Credits](#Credits)
+* [Sources](#Sources)
 * [Features](#Features)
 * [License](#License)
 
@@ -27,6 +27,8 @@
 
 7. Run the app using node.js, run node server.js
 
+## DEMO-Recording
+
 
 ## Screenshots
 
@@ -44,7 +46,7 @@
 * Once you installed the necessary, run the command node server.js 
 
 ## Sources
-I used guidance from my tutor and past exercises from module 11. Past Homework ReadMe format
+I used guidance from my tutor and past exercises from module 12. Past Homework ReadMe format
 ## Features
 * This app allows you to manage employee information.
 ## License

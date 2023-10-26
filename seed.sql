@@ -1,14 +1,15 @@
 USE employee_db
 -- inserts names of depts into designated table --
 INSERT INTO department 
-(department_name)
+(id, department_name)
 VALUES
-('Human Resources'),
-('Marketing'),
-('Sales'),
-('Engineering'),
-('Finance'),
-('Customer Service');
+(1,'Human Resources'),
+(2,'Marketing'),
+(3,'Sales'),
+(4,'Engineering'),
+(5,'Finance'),
+(6,'Customer Service');
+
 -- inserts employee roles into role table --
 INSERT INTO role
 (title, salary, department_id)
