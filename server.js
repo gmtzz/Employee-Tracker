@@ -241,12 +241,67 @@ function addAnEmployee(){
         })
     })
 
-    
-
-       
-        
-    
 
 }
+//Update an employee function
+function updateEmployee() {
+
+    const employeeList = response.map((role)=>({
+        value: employeeId,
+        name: employee.employeeFirst, //employee.employeeLast,
+
+    }))
+    inquirer.prompt([
+        {
+            type:"list",
+            name: "employeeId",
+            message: "Select the employee to update:",
+            choices: employeeList
+        },
+        {
+            type: "input",
+            name: "newFirstName",
+            message: "Enter updated first name:",
+        },
+        {
+            type: "input",
+            name: "newLastName",
+            message: "Enter updated last name:",
+        },
+        {
+            type: "list",
+            name: "newRoleId",
+            message: "Please choose new role for the employee",
+            choices: "",
+        },
+
+        ]).then((userResponse) => {
+           
+            const employeeId = userResponse.employeeId;
+            const newFirstName = userResponse.newFirstName;
+            const newLastName = userResponse.newLastName;
+            const newRoleId = userResponse.newRoleId;
+
+          
+            const query = `
+                UPDATE employee
+                SET first_name = "${newFirstName}", last_name = "${newLastName}", role_id = "${newRoleId}"
+                WHERE id = "${employeeId}"
+            `;
+
+            connection.query(query, [newFirstName, newLastName, newRoleId, employeeId], (err, results) => {
+                if (err) {
+                 console.log('Error:', err);
+                } else {
+                    console.log('Update Successful.');
+                    viewAllEmployees(); 
+                    startTracker();
+                }
+            
+        
+        });
+    });
+}
+
 startTracker()
     
